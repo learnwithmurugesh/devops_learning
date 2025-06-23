@@ -1,10 +1,10 @@
-resource "aws_security_group" "audi_sg" {
+resource "aws_security_group" "audi_sg"{
   name        = var.name
   description = var.description
   vpc_id      = var.vpc_id
 
   dynamic "ingress" {
-    for_each = var.ingress_rules != null ? var.ingress_rules : []
+    for_each = var.ingress_rules
     content {
       from_port   = ingress.value.from_port
       to_port     = ingress.value.to_port
@@ -14,7 +14,7 @@ resource "aws_security_group" "audi_sg" {
   }
 
   dynamic "egress" {
-    for_each = var.egress_rules != null ? var.egress_rules : []
+    for_each = var.egress_rules
     content {
       from_port   = egress.value.from_port
       to_port     = egress.value.to_port

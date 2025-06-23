@@ -1,15 +1,6 @@
-variable "name" {
-  type = string
-}
-
-variable "description" {
-  type = string
-}
-
-variable "vpc_id" {
-  type = string
-}
-
+variable "name" {}
+variable "description" {}
+variable "vpc_id" {}
 variable "ingress_rules" {
   type = list(object({
     from_port   = number
@@ -17,7 +8,6 @@ variable "ingress_rules" {
     protocol    = string
     cidr_blocks = list(string)
   }))
-  default = []
 }
 
 variable "egress_rules" {
@@ -27,5 +17,4 @@ variable "egress_rules" {
     protocol    = string
     cidr_blocks = list(string)
   }))
-  default = []
 }
