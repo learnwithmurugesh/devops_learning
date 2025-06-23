@@ -4,4 +4,4 @@ availability_zones = ["us-east-1a", "us-east-1b"]
 environment        = "dev"
 ami_id             = "ami-0c55b159cbfafe1f0"
 instance_type      = "t2.micro"
-key_name           = "audi-key"
+key_name           = "your-keypair-name"

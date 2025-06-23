@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source             = "../../modules/vpc"
+  source             = "git::https://github.com/learnwithmurugesh/devops_learning.git//modules/vpc?ref=main"
   vpc_cidr           = var.vpc_cidr
   public_subnets     = var.public_subnets
   availability_zones = var.availability_zones
@@ -11,7 +11,7 @@ module "vpc" {
 }
 
 module "security_group" {
-  source      = "../../modules/security_group"
+  source      = "git::https://github.com/learnwithmurugesh/devops_learning.git//modules/security_group?ref=main"
   name        = "ec2-sg"
   description = "Allow SSH"
   vpc_id      = module.vpc.vpc_id
@@ -36,7 +36,7 @@ module "security_group" {
 }
 
 module "ec2" {
-  source             = "../../modules/ec2"
+  source             = "git::https://github.com/learnwithmurugesh/devops_learning.git//modules/ec2?ref=main"
   ami_id             = var.ami_id
   instance_type      = var.instance_type
   subnet_id          = module.vpc.public_subnet_ids[0]
