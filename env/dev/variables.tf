@@ -22,11 +22,6 @@ variable "private_subnets" {
   default     = ["10.0.3.0/24", "10.0.4.0/24"]
 }
 
-variable "availability_zones" {
-  description = "List of availability zones"
-  type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
-}
 
 variable "environment" {
   description = "Environment name"
