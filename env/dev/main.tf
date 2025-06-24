@@ -8,9 +8,10 @@ module "vpc" {
   public_subnets     = var.public_subnets
   availability_zones = var.availability_zones
   environment        = var.environment
+  private_subnets = var.private_subnets
 }
 
-module "sg"{
+module "sg" {
   source      = "git::https://github.com/learnwithmurugesh/devops_learning.git//modules/sg?ref=main"
   name        = "ec2-sg"
   description = "Allow SSH"
@@ -43,4 +44,6 @@ module "ec2" {
   security_group_ids = [module.sg.security_group_id]
   key_name           = var.key_name
   instance_name      = "${var.environment}-ec2"
+
+  depends_on = [module.vpc, module.sg]
 }
