@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"ec2","Source":"git::https://github.com/learnwithmurugesh/devops_learning.git//modules/ec2?ref=main","Dir":".terraform/modules/ec2/modules/ec2"},{"Key":"vpc","Source":"git::https://github.com/learnwithmurugesh/devops_learning.git//modules/vpc?ref=main","Dir":".terraform/modules/vpc/modules/vpc"}]}
