@@ -36,6 +36,7 @@ module "sg" {
   ]
 }
 
+
 module "ec2" {
   source             = "git::https://github.com/learnwithmurugesh/devops_learning.git//modules/ec2?ref=main"
   ami_id             = var.ami_id
